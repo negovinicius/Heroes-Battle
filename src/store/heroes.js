@@ -4,10 +4,10 @@ import api from '../services/rest';
 export const useHeroesStore = defineStore('heroes', {
     state: () => ({
         heroes: [],
-        isLoading: false, 
+        isLoading: false,
     }),
     actions: {
-        async takeHeroes() {
+        async dispatchGetHeroes() {
             try {
                 this.isLoading = true;
                 const response = await api.heroes.getHeroes();
