@@ -1,8 +1,5 @@
 <template>
     <HeroesListModule></HeroesListModule>
-    <div>
-        oi View hero
-    </div>
 </template>
 <script>
 import HeroesListModule from '../modules/HeroesListModule.vue';
@@ -14,7 +11,6 @@ export default {
         Card,
     }, 
   setup() {
-    console.log('arroz')
     return{};
   },
 }

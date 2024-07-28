@@ -1,18 +1,18 @@
-import { onMounted, computed } from 'vue';
-import { useHeroesStore } from '../store/heroes';
+import { onMounted, computed } from "vue";
+import { useHeroesStore } from "../store/heroes";
 
 export default function useHeroes(store = useHeroesStore()) {
-    const heroes = computed(() => store.heroes)
+  const heroes = computed(() => store.heroes);
 
-    const getHeroes = () => store.dispatchGetHeroes();
+  const getHeroes = () => store.dispatchGetHeroes();
 
-    onMounted(() => {
-        getHeroes();
-    })
-    
-    return {
-        heroes,
+  onMounted(async () => {
+    await getHeroes();
+  });
 
-        getHeroes,
-    };
-};
+  return {
+    heroes,
+
+    getHeroes,
+  };
+}

@@ -1,46 +1,48 @@
 <script>
-import { onMounted, computed } from 'vue';
-import useHeroes from '../composables/useHeroes';
-import Card from '../components/Card.vue'
-import CardWinner from '../components/CardWinner.vue';
+import { onMounted, computed, onBeforeMount } from "vue";
+import useHeroes from "../composables/useHeroes";
+import Card from "../components/Card.vue";
+import CardWinner from "../components/CardWinner.vue";
 
 export default {
-    name: 'HeroesListModule',
-    components:{
-        Card,
-        CardWinner,
-    },
-    setup() { 
+  name: "HeroesListModule",
+  components: {
+    Card,
+    CardWinner,
+  },
+  setup() {
+    const { 
+      heroes, 
+      getHeroes
+    } = useHeroes();
 
-        const {
-            heroes,
-            getHeroes,
-        } = useHeroes();
+    onBeforeMount(async () => {
+      await getHeroes();
+    });
 
-        onMounted(() => {
-            getHeroes();
-            console.log(heroes)
-            console.log('entrei', getHeroes())
-        })
+    return {
+      heroes,
 
-        return {
-
-        };
-    },
+      getHeroes,
+    };
+  },
 };
 </script>
+
 <template>
-    <div class="Module">
-        <Card></Card>
+    <div class="heroes-list">
+    <div v-for="(hero, index) in heroes" 
+  :key="index"
+  >
+    <Card :data="hero"/>
     </div>
-    
-    <card-winner></card-winner>
+</div>
+<CardWinner />
 </template>
 
-<style scoped> 
-    .Module {
-        border: 10px solid black;
-        padding: 10px;
-        height: 850px;
+<style scoped>
+    .heroes-list {
+        display: flex;
+        flex-wrap: wrap;
     }
 </style>

@@ -1,6 +1,5 @@
 <script>
 import { onMounted, computed } from 'vue';
-import { useRouter } from 'vue-router';
 
 export default {
     name: 'CardWinner',
@@ -9,6 +8,6 @@ export default {
 
 <template>
     <div>
-        
+
     </div>
 </template>
