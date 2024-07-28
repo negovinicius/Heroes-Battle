@@ -5,6 +5,8 @@ import router from './router';
 
 const app = createApp(App);
 
-app.use(createPinia);
-app.use(router);
-app.mount('#app');
+const pinia = createPinia();  // Certifique-se de criar a instância do Pinia
+
+app.use(pinia);               // Use a instância do Pinia
+app.use(router);              // Use o roteador
+app.mount('#app');            // Monte a aplicação

@@ -11,6 +11,7 @@ export default {
     name: 'HeroesListView',
     components: {
         HeroesListModule,
+        Card,
     }, 
   setup() {
     console.log('arroz')
