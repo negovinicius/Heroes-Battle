@@ -16,22 +16,33 @@ export default {
   <div class="card">
     <div class="Heroname">{{ data.name }}</div>
     <img :src="data.images.lg" alt="Card Image">
-    <div>Combate {{ data.powerstats.combat }}</div>
-  </div>
+    <div class="statsContainer">
+      <div class="powerStats">Combate {{ data.powerstats.combat }} <br>
+        Inteligência {{ data.powerstats.    intelligence }} <br>
+        Durabilidade {{ data.powerstats.durability }} <br>
+      </div>
+      <div class="powerStats2">
+        Agilidade {{ data.powerstats.speed }} <br>
+        Força {{ data.powerstats.strength }} <br>
+        Poder {{ data.powerstats.power }} 
+      </div>
+        </div>
+    </div>
 </template>
 <style scoped>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Freeman&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
     .card {
-        border: 5px solid #393644;
+        border: 6px solid #393644;
         border-radius: 8px;
         height: 320px;
-        width: 200px;
+        width: 215px;
         margin: 12px;
         background-color: #ac8f55;
     }
     img {
-      height: 180px;
+      height: 200px;
       width: 160px;
-      margin: 30px 0px 0px 18px;
+      margin: 12px 0px 10px 22px;
       border: 4px solid #393644;
       border-radius: 8px;
     }
@@ -39,7 +50,21 @@ export default {
       display: flex;
       justify-content: center;
       margin-top: 8px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 110%;
       border: 2px solid black;
-      
+    }
+    .statsContainer{
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+    }
+    .powerStats, .powerStats2 {
+      flex: 1;
+      font-size: 13px;
+      text-align: center;
+      border: 2px solid black;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 75%;
     }
 </style>

@@ -44,5 +44,7 @@ export default {
     .heroes-list {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+        background-color: black;
     }
 </style>
