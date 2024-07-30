@@ -68,7 +68,7 @@ export default {
   >
     <div class="heroes-list">
       <div class="title">
-        <H1>Heroes Batle</H1>
+        <H1>Heroes Battle</H1>
         <p>
           Selecione seu héroi e um oponente!
         </p>
