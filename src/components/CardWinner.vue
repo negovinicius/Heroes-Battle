@@ -48,7 +48,7 @@ export default {
 </script>
 
 <template>
-    <div class="container">
+  <div class="container">
     <div @click="closeCardWinner" class="close-button">x</div>
     <span class="hero-name">
       {{ winner.name }}
