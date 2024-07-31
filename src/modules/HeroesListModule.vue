@@ -90,17 +90,18 @@ export default {
 
 <style scoped>
 .title {
-  margin-left: 10px;
-  color: white;
   display: inline-block;
-  width: 500px;
+  width: 100%;
   color: #ac8f55;
   font-size: 2em;
+  align-items: center;
+  margin: 0px 0px 15px 20px;
 }
 .main {
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .heroes-list {
@@ -108,6 +109,7 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
   background-color: black;
+  width: 100%;
 }
 
 .blur {
